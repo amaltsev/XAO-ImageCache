@@ -1,11 +1,11 @@
-package testcases::imagecache;
+package testcases::ImageCache::ImageCache;
 use strict;
 use XAO::Utils;
 use XAO::ImageCache;
 use Data::Dumper;
 use Error qw(:try);
 
-use base qw(testcases::base);
+use base qw(testcases::ImageCache::base);
 
 my %params = (
     reload         => 1,
@@ -38,7 +38,7 @@ sub test_cache {
     $self->assert((-d $params{cache_path}),     'Can\'t create cache directory!');
     $self->assert(defined($img_cache->check()), 'Image Cache checking failure!');
 
-    my $prod = $odb->fetch('/Products')->get('p1');    
+    my $prod = $odb->fetch('/Products')->get('p1');
     $self->assert(defined($prod), 'Can\'t get data object drom XAO FS!');
 
     my $dest_url   = $prod->get($params{dest_url_key});

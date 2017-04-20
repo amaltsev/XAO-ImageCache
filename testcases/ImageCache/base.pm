@@ -1,4 +1,4 @@
-package testcases::base;
+package testcases::ImageCache::base;
 use strict;
 use XAO::Utils;
 use XAO::Objects;
@@ -44,7 +44,7 @@ sub set_up {
                 type        => 'list',
                 class       => 'Data::Product',
                 key         => 'id',
-            structure       => { 
+            structure       => {
                 name => {
                     type        => 'text',
                     maxlength   => 50,
@@ -76,7 +76,7 @@ sub set_up {
 
     my $product=$plist->get_new();
     $self->assert(ref($product), "Can't create new Product");
-    
+
     $product->put(name => "Test product 1");
     $product->put(source_image_url => "http://apache.org/icons/apache_pb.gif");
     $product->put(dest_image_url => "");
