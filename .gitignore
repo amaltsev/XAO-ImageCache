@@ -1,7 +1,12 @@
 .config
-pm_to_blib
-blib
-Makefile.old
+.config-*
+CHANGES
+MYMETA.*
 Makefile
-ta
-tmp
+Makefile.old
+blib
+blibdirs
+pm_to_blib
+t/*.pl
+t/*.xt
+*.swp
